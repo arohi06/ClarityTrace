@@ -1,0 +1,66 @@
+export const DESIGN_TOKENS = {
+  colors: {
+    light: {
+      background: '#F3EEE4',
+      secondaryBackground: '#EBE4D5',
+      card: '#FAF7F0',
+      textPrimary: '#1C2620',
+      textSecondary: '#6B7268',
+      accentPrimary: '#2F5D50',
+      accentSecondary: '#C4562F',
+      amber: '#B9822A',
+      border: 'rgba(28, 38, 32, 0.13)',
+    },
+    dark: {
+      background: '#171F1B',
+      secondaryBackground: '#202B25',
+      card: '#26332C',
+      textPrimary: '#F3EEE4',
+      textSecondary: '#B3BDB3',
+      accentPrimary: '#8DAE9B',
+      accentSecondary: '#D47A59',
+      amber: '#D7A44E',
+      border: 'rgba(243, 238, 228, 0.13)',
+    },
+  },
+  typography: {
+    headingFont: 'Fraunces, Georgia, serif',
+    bodyFont: '"Instrument Sans", ui-sans-serif, system-ui, sans-serif',
+    monoFont: '"JetBrains Mono", ui-monospace, monospace',
+    scale: {
+      display: 'text-3xl sm:text-4xl lg:text-5xl font-semibold tracking-tight leading-[1.08]',
+      pageTitle: 'text-2xl sm:text-3xl font-semibold tracking-tight leading-tight',
+      sectionHeading: 'text-lg sm:text-xl font-semibold tracking-tight',
+      cardHeading: 'text-sm font-semibold',
+      body: 'text-sm leading-relaxed',
+      caption: 'text-xs leading-normal',
+      technical: 'text-xs font-mono tabular-nums',
+      tableCell: 'text-xs leading-normal',
+    },
+  },
+  spacing: {
+    containerPad: 'p-5 sm:p-6',
+    sectionGap: 'space-y-6 sm:space-y-8',
+    gridGap: 'gap-4 sm:gap-5',
+  },
+  radius: {
+    card: 'rounded-xl',
+    control: 'rounded-lg',
+    subtle: 'rounded-md',
+  },
+  heights: {
+    header: 'h-16',
+    button: 'h-9',
+    buttonLg: 'h-11',
+    input: 'h-10',
+  },
+  motion: {
+    fast: 'duration-150 ease-out',
+    standard: 'duration-200 ease-out',
+  },
+  breakpoints: {
+    tablet: '768px',
+    desktop: '1024px',
+    wide: '1280px',
+  },
+} as const;

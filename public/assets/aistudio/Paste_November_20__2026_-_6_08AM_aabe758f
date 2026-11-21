@@ -1,0 +1,1581 @@
+# CLARITYTRACE — COMPLETE PRODUCT DESIGN & MVP DEVELOPMENT PROMPT
+
+You are an elite product designer, startup CTO, senior full-stack developer, privacy engineer, browser automation specialist and SaaS architect.
+
+Your task is to design and build a polished, functional, technically credible MVP called **ClarityTrace**.
+
+This project is being developed by Team NextGen for the Google Startup Buildathon, Mumbai City Round, November 20–21, 2026.
+
+You are starting from a blank project. You do not have access to any previous ZIP files, source code or external project attachments.
+
+Everything needed to understand and build the product is specified below.
+
+Do not ask me to upload an existing project.
+
+Do not build a generic dashboard.
+
+Think like a startup team building a real developer product that must be demonstrated to technical mentors and evaluators.
+
+---
+
+# PART 1 — UNDERSTAND THE PRODUCT
+
+## 1.1 What is ClarityTrace?
+
+ClarityTrace is an AI-assisted website privacy monitoring and regression testing platform.
+
+It tests what websites ACTUALLY do with user data across different consent conditions.
+
+Most websites display cookie banners and privacy notices explaining how they collect and use information.
+
+However, their actual browser behaviour may not always match what users expect or what their consent interface communicates.
+
+Examples:
+
+- Analytics cookies load before a user gives consent.
+- Advertising scripts continue running after a user rejects cookies.
+- Third-party trackers appear unexpectedly.
+- A website update introduces new tracking scripts.
+- Developers fail to notice that privacy behaviour has changed.
+
+ClarityTrace uses automated browser testing to investigate these behaviours.
+
+## 1.2 Our central value proposition
+
+"Your website says it respects privacy. Let's verify that."
+
+Alternative tagline:
+
+"Know what your website actually does."
+
+Supporting statement:
+
+"Test consent. Detect tracking. Catch privacy regressions."
+
+## 1.3 The central differentiator
+
+ClarityTrace is not just a cookie scanner.
+
+It is a privacy behaviour testing and regression monitoring platform.
+
+Its core differentiator is:
+
+**Testing actual browser activity across consent states and detecting changes in that activity across website releases.**
+
+The system should compare:
+
+- No Consent.
+- Accept All.
+- Reject All.
+
+It should then compare the results with a previously saved baseline.
+
+The result is an evidence-backed explanation of what changed, when it changed and why developers should investigate it.
+
+## 1.4 Target users
+
+Primary:
+- Web developers.
+- Frontend engineers.
+- Privacy engineers.
+- SaaS development teams.
+- Website owners.
+
+Secondary:
+- Digital agencies.
+- Technical compliance teams.
+- Security and QA teams.
+
+The interface should feel like a professional developer tool while remaining understandable to non-specialists.
+
+---
+
+# PART 2 — BRAND IDENTITY AND DESIGN DIRECTION
+
+## 2.1 Design inspiration
+
+Create an editorial-style premium SaaS interface.
+
+The visual direction should combine:
+
+- Premium startup branding.
+- Developer monitoring dashboards.
+- Privacy technology.
+- Minimal editorial design.
+- Clear data visualization.
+
+Do not make the interface look like a conventional cybersecurity product.
+
+Do not use generic AI dashboard templates.
+
+## 2.2 Brand colors
+
+Use this design system consistently.
+
+Primary background:
+#F3EEE4
+
+Secondary background:
+#EBE4D5
+
+Card background:
+#FAF7F0
+
+Primary text:
+#1C2620
+
+Muted text:
+#6B7268
+
+Moss green:
+#2F5D50
+
+Clay accent:
+#C4562F
+
+Amber:
+#B9822A
+
+Borders:
+Subtle transparent ink.
+
+Use green for verified positive indicators, amber for warnings and muted red for critical findings.
+
+Avoid excessive bright colors.
+
+## 2.3 Typography
+
+Use Google Fonts:
+
+Headings:
+Fraunces.
+
+Body:
+Instrument Sans.
+
+Technical data:
+A readable monospace font such as JetBrains Mono.
+
+Headings should be expressive and editorial.
+
+Technical labels should be compact and clean.
+
+## 2.4 Design elements
+
+Use:
+
+- Sticky navigation.
+- Large editorial hero sections.
+- Generous whitespace.
+- Rounded cards.
+- Subtle borders.
+- Soft shadows.
+- Clean tables.
+- Small status labels.
+- Animated scan indicators.
+- Subtle hover interactions.
+- Smooth transitions.
+- Consistent spacing.
+- Responsive layouts.
+
+Create both light and dark modes.
+
+Dark mode should use deep forest-charcoal surfaces rather than pure black.
+
+Persist theme preference.
+
+Use accessible contrast and respect reduced-motion preferences.
+
+---
+
+# PART 3 — PRODUCT INFORMATION ARCHITECTURE
+
+Create these main application areas:
+
+1. Landing page.
+2. Scan configuration.
+3. Live scan experience.
+4. Main dashboard.
+5. Consent comparison.
+6. Network inspector.
+7. Cookie and storage inspector.
+8. Privacy findings.
+9. Baseline and regression monitoring.
+10. Evidence explorer.
+11. Scan history.
+12. Reports.
+13. Settings.
+
+Use a consistent application shell with sidebar navigation for the authenticated dashboard.
+
+Public landing page should have a simpler navigation.
+
+The main navigation should include:
+
+- Overview.
+- New scan.
+- Scan history.
+- Baselines.
+- Reports.
+- Settings.
+
+Provide a clearly visible New Scan button.
+
+---
+
+# PART 4 — LANDING PAGE
+
+Create a beautiful and conversion-focused landing page.
+
+## Navigation
+
+Left:
+ClarityTrace logo.
+
+Right:
+- Product.
+- How it works.
+- Features.
+- Documentation.
+- Sign in.
+- Get started.
+
+Logo direction:
+
+Use a distinctive trace-inspired symbol combining a magnifying glass, connected nodes or an abstract browser inspection mark.
+
+Keep it minimal and recognizable.
+
+## Hero section
+
+Eyebrow:
+
+PRIVACY BEHAVIOUR MONITORING
+
+Main headline:
+
+"Your cookie banner says one thing.
+Your website might do another."
+
+Alternative supporting headline:
+
+"Know what your website actually does."
+
+Description:
+
+"ClarityTrace tests real website behaviour across consent states, detects unexpected tracking and catches privacy regressions before they reach your users."
+
+Main interaction:
+
+A large website URL input.
+
+Placeholder:
+Enter a website URL to inspect...
+
+Primary button:
+Run privacy scan →
+
+Secondary action:
+Explore the platform.
+
+Add example website chips:
+- wikipedia.org
+- theguardian.com
+- duckduckgo.com
+
+These should populate the URL input rather than pretending a scan has already been performed.
+
+Show a small note:
+
+"Automated browser testing. Evidence-backed observations. No legal certification."
+
+## Hero visual
+
+Build a visual representation of the product.
+
+Show three consent states:
+
+NO CONSENT | ACCEPT ALL | REJECT ALL
+
+Underneath, show sample browser request observations, cookie counts and a comparison indicator.
+
+This is a static illustrative preview only.
+
+Clearly label illustrative data as a product preview.
+
+Do not present sample values as actual scan results.
+
+## How it works
+
+Create three elegant cards:
+
+01 — OBSERVE
+
+"Open the website in an isolated browser and capture its actual requests, cookies and storage activity."
+
+02 — TEST
+
+"Run controlled No Consent, Accept All and Reject All scenarios."
+
+03 — TRACE
+
+"Compare findings with previous scans and identify unexpected privacy behaviour changes."
+
+## Feature sections
+
+Include:
+
+- Consent-state testing.
+- Network request inspection.
+- Cookie detection.
+- Third-party tracker identification.
+- Storage analysis.
+- Privacy regression detection.
+- Evidence-backed reports.
+- Developer recommendations.
+
+## Closing CTA
+
+"Don't assume your consent banner works. Test it."
+
+Button:
+Start your first scan.
+
+---
+
+# PART 5 — SCAN CONFIGURATION
+
+When the user enters a URL, open a scan configuration experience.
+
+Show:
+
+- Website URL.
+- Normalized domain.
+- Scan name, optional.
+- Browser: Chromium.
+- Viewport configuration.
+- Observation duration.
+- Consent scenarios.
+
+Default selected scenarios:
+
+1. No Consent.
+2. Accept All.
+3. Reject All.
+
+Allow users to select individual scenarios where useful.
+
+For the initial MVP, all three should be supported.
+
+Show a small explanation:
+
+"Each scenario runs in a fresh browser context to reduce contamination from cookies and previous consent decisions."
+
+Primary button:
+
+Start Scan.
+
+Validate:
+- URL format.
+- HTTP/HTTPS scheme.
+- Empty values.
+- Invalid domains.
+
+Add safe-scan restrictions.
+
+Never allow public scanning of localhost, private IP ranges or internal infrastructure.
+
+---
+
+# PART 6 — LIVE SCAN EXPERIENCE
+
+Build a polished real-time scanning interface.
+
+This must be connected to actual backend progress.
+
+Display a vertical progress timeline:
+
+01 Initializing browser.
+
+02 Navigating to website.
+
+03 Detecting consent interface.
+
+04 Running No Consent scenario.
+
+05 Running Accept All scenario.
+
+06 Running Reject All scenario.
+
+07 Capturing cookies and storage.
+
+08 Collecting network requests.
+
+09 Classifying third-party services.
+
+10 Generating findings.
+
+11 Saving scan results.
+
+Show:
+
+- Website domain.
+- Scan ID.
+- Start time.
+- Current step.
+- Scenario being tested.
+- Network requests captured.
+- Cookies captured.
+- Third-party domains detected.
+- Scan status.
+
+Use meaningful progress messages.
+
+If the scan is incomplete, display the failed step and reason.
+
+Do not fabricate progress.
+
+Do not use fake loading percentages.
+
+Use polling or Server-Sent Events for real progress updates.
+
+---
+
+# PART 7 — MAIN DASHBOARD
+
+This is the central product screen.
+
+It must look professional, information-rich and easy to understand.
+
+## Header
+
+Show:
+
+- Website domain.
+- Scan ID.
+- Last scanned time.
+- Scan status.
+- New Scan button.
+- Export Report button.
+
+## Overview statistics
+
+Create four cards:
+
+1. Total Requests.
+2. Third-Party Domains.
+3. Cookies Detected.
+4. Potential Findings.
+
+Each card should display an appropriate comparison or descriptive detail when actual data is available.
+
+Do not display made-up metrics.
+
+## Main consent comparison panel
+
+Create three side-by-side panels.
+
+NO CONSENT
+
+ACCEPT ALL
+
+REJECT ALL
+
+Each panel should display:
+
+- Requests observed.
+- Third-party domains.
+- Cookies created.
+- Local storage changes.
+- Session storage changes.
+- Known tracker categories.
+- Consent interaction status.
+
+Show meaningful visual differences.
+
+Highlight unexpected activity in No Consent and Reject All.
+
+Do not treat every third-party request as a confirmed violation.
+
+## Behaviour summary
+
+Show a concise summary of the scan:
+
+- What changed across consent states?
+- Which third-party services were observed?
+- Were any potential consent issues identified?
+- Was consent interaction successful?
+- Are there any incomplete observations?
+
+Use evidence-based text.
+
+## Findings panel
+
+Show severity groups:
+
+- Critical.
+- High.
+- Medium.
+- Informational.
+
+Each finding card should include:
+
+- Finding title.
+- Severity.
+- Consent state.
+- Affected domain.
+- Evidence count.
+- Short explanation.
+- View evidence action.
+- Suggested remediation.
+
+---
+
+# PART 8 — CORE INNOVATION: CONSENT BEHAVIOUR FINGERPRINT
+
+Introduce a distinctive feature called:
+
+CONSENT BEHAVIOUR FINGERPRINT.
+
+A website's consent behaviour can be represented by its observed activity across the three scenarios.
+
+Create a structured fingerprint containing:
+
+- Third-party domains.
+- Known tracker categories.
+- Request counts by category.
+- Cookie names and attributes.
+- Storage keys.
+- Consent-dependent changes.
+- Consent interaction outcome.
+
+Represent this visually as a three-column fingerprint.
+
+The fingerprint should help answer:
+
+"How does this website behave when users make different consent choices?"
+
+Create a compact visual summary.
+
+Example structure:
+
+No Consent → observed activity.
+
+Accept All → observed activity.
+
+Reject All → observed activity.
+
+Show newly observed and removed activity between states.
+
+Important:
+
+The fingerprint must be calculated from actual observations, not AI-generated assumptions.
+
+Do not claim it is a cryptographic fingerprint unless a genuine hashing and versioning mechanism is implemented.
+
+---
+
+# PART 9 — NETWORK REQUEST INSPECTOR
+
+Create a detailed request inspector.
+
+Display a professional data table.
+
+Columns:
+
+- Request domain.
+- Request URL.
+- Method.
+- Resource type.
+- Response status.
+- First-party / third-party.
+- Tracker category.
+- Consent state.
+- Timestamp.
+
+Features:
+
+- Search.
+- Sorting.
+- Pagination.
+- Filters.
+- Expandable request details.
+
+Filters:
+
+- No Consent.
+- Accept All.
+- Reject All.
+- Analytics.
+- Advertising.
+- Social.
+- Marketing.
+- Functional.
+- Unknown.
+- First-party.
+- Third-party.
+
+Expanded request detail should show:
+
+- Full request URL.
+- Domain.
+- Method.
+- Resource type.
+- Response status where available.
+- Timestamp.
+- Initiator where available.
+- Associated tracker classification.
+- Related findings.
+
+Use monospace styling for URLs.
+
+Do not overload the table with unnecessary columns.
+
+---
+
+# PART 10 — COOKIE AND STORAGE INSPECTOR
+
+Create two tabs:
+
+COOKIES
+
+LOCAL AND SESSION STORAGE
+
+## Cookies
+
+Show:
+
+- Cookie name.
+- Domain.
+- Path.
+- Secure.
+- HttpOnly.
+- SameSite.
+- Expiry.
+- Consent state.
+- First-party / third-party.
+
+Show whether a cookie appears in:
+- No Consent.
+- Accept All.
+- Reject All.
+
+## Storage
+
+Show:
+
+- Storage type.
+- Key.
+- Value preview or hash.
+- Scenario.
+- Observation time.
+
+Avoid exposing unnecessary sensitive values.
+
+Highlight newly created or changed storage entries.
+
+Do not claim that every cookie or storage entry is a tracking mechanism.
+
+---
+
+# PART 11 — PRIVACY FINDINGS ENGINE
+
+Use deterministic Python detection rules.
+
+Possible findings:
+
+1. Known analytics request before consent.
+2. Known advertising tracker after Reject All.
+3. Unexpected third-party request.
+4. New tracker introduced after a website update.
+5. Cookie created in an unexpected consent state.
+6. Storage behaviour differs across consent states.
+7. Consent interaction could not be verified.
+8. Tracking behaviour changed between baseline and current scan.
+
+Each finding must include:
+
+- Finding ID.
+- Rule ID.
+- Title.
+- Severity.
+- Category.
+- Consent state.
+- Description.
+- Evidence references.
+- Detection timestamp.
+- Confidence basis.
+- Suggested developer action.
+
+Severity levels:
+
+Critical:
+Strongly evidenced and potentially significant behaviour requiring immediate investigation.
+
+High:
+Significant unexpected behaviour.
+
+Medium:
+Potential consent or tracking concern.
+
+Low:
+Minor or uncertain observation.
+
+Informational:
+Useful technical observation without an identified concern.
+
+Do not automatically claim legal violations.
+
+Use language such as:
+"Potential consent issue detected."
+
+"Unexpected tracking activity observed."
+
+"Further verification recommended."
+
+---
+
+# PART 12 — CORE DIFFERENTIATOR: PRIVACY REGRESSION TIMELINE
+
+Create a dedicated page called:
+
+PRIVACY REGRESSION.
+
+This feature compares website behaviour across multiple scans.
+
+Users should be able to:
+
+- Select a baseline scan.
+- Select a current scan.
+- Compare results.
+- Save a baseline.
+- View behavioural changes over time.
+
+Display:
+
+NEWLY DETECTED:
+- New third-party domains.
+- New tracker classifications.
+- New cookies.
+- New requests under Reject All.
+- New requests under No Consent.
+
+REMOVED:
+- Trackers no longer observed.
+- Cookies no longer observed.
+- Requests that disappeared.
+
+CHANGED:
+- Consent-state behaviour.
+- Request counts.
+- Storage behaviour.
+- Cookie attributes.
+
+Create a timeline showing scan dates and changes.
+
+Create a comparison table:
+
+Observation | Baseline | Current | Difference.
+
+Use green for improvements, amber for changes requiring investigation and red for concerning changes.
+
+Important:
+
+A new tracker is a behavioural change, not automatically a confirmed privacy violation.
+
+Do not create a fictional baseline.
+
+If there is only one scan, provide a Set as Baseline button.
+
+---
+
+# PART 13 — POLICY VS REALITY CHECK
+
+Introduce a second advanced feature:
+
+POLICY VS REALITY.
+
+This is an important product expansion opportunity.
+
+The feature compares what a website's privacy policy claims with what browser testing actually observes.
+
+Example:
+
+Policy statement:
+"We use analytics technologies to improve our services."
+
+Observed browser evidence:
+Analytics-related requests detected in No Consent.
+
+Potential discrepancy:
+"Analytics-related activity was observed before the consent interaction. Review whether this behaviour is consistent with the site's consent configuration and applicable requirements."
+
+Show three sections:
+
+1. What the policy says.
+2. What the browser observed.
+3. What developers should investigate.
+
+Use Gemini to interpret policy language where available.
+
+Never let Gemini invent observed behaviour.
+
+Every browser observation must reference real scan evidence.
+
+If policy retrieval fails, clearly state that the comparison is unavailable.
+
+This is an advanced MVP feature and should not delay the core scanning engine.
+
+---
+
+# PART 14 — EVIDENCE EXPLORER
+
+Create a dedicated Evidence Explorer.
+
+Users should be able to inspect the underlying evidence behind each finding.
+
+Evidence types:
+
+- Network requests.
+- Cookies.
+- Storage changes.
+- Consent interactions.
+- Browser errors.
+- Scenario metadata.
+
+Every finding should have an evidence trail.
+
+Show:
+
+- Evidence ID.
+- Scan ID.
+- Scenario.
+- Timestamp.
+- Observation type.
+- Domain or key.
+- Detection rule.
+- Related finding.
+
+Provide a chronological evidence timeline.
+
+The purpose is to make every conclusion traceable and verifiable.
+
+Do not generate fake screenshots or fake browser recordings.
+
+If screenshot capture is implemented, store the actual screenshot and reference it.
+
+---
+
+# PART 15 — DEVELOPER FIX RECOMMENDATIONS
+
+Introduce a feature called:
+
+FIX IT.
+
+For every potential finding, provide:
+
+1. What happened.
+2. Why it matters.
+3. Where to investigate.
+4. Suggested technical fix.
+5. How to verify the fix.
+
+Example:
+
+Finding:
+Analytics request detected before consent.
+
+Suggested investigation:
+Check whether the analytics initialization script runs before the consent management platform has established the user's preferences.
+
+Suggested action:
+Gate optional analytics initialization behind the relevant consent state.
+
+Verification:
+Run No Consent and Reject All scenarios again and compare the network activity.
+
+Use Gemini to improve explanation quality, but base suggestions on the actual finding.
+
+Never claim that a fix has been applied automatically.
+
+---
+
+# PART 16 — SCAN HISTORY AND BASELINES
+
+Create a scan history page.
+
+Display:
+
+- Website.
+- Domain.
+- Scan ID.
+- Date.
+- Scan status.
+- Findings.
+- Third-party domains.
+- Baseline status.
+
+Allow:
+
+- Opening a scan.
+- Comparing scans.
+- Setting a baseline.
+- Viewing findings.
+- Exporting JSON.
+
+Provide filters and search.
+
+Store actual scan records in the database.
+
+---
+
+# PART 17 — REPORTS AND EXPORT
+
+Create an evidence-backed report.
+
+Include:
+
+1. Website information.
+2. Scan metadata.
+3. Browser configuration.
+4. Consent scenarios.
+5. Consent interaction status.
+6. Network request summary.
+7. Cookie observations.
+8. Storage observations.
+9. Tracker classifications.
+10. Privacy findings.
+11. Evidence references.
+12. Baseline comparison.
+13. Developer recommendations.
+14. Limitations and methodology.
+
+Provide JSON export as a core MVP capability.
+
+PDF export is desirable if time permits.
+
+---
+
+# PART 18 — GOOGLE GEMINI INTEGRATION
+
+Integrate Gemini as an intelligence layer.
+
+Use Gemini for:
+
+- Plain-language explanations.
+- Privacy-policy interpretation.
+- Comparing policy claims with observed evidence.
+- Summarizing technical findings.
+- Suggesting developer actions.
+- Generating report summaries.
+
+Architecture:
+
+PLAYWRIGHT → EVIDENCE COLLECTION → PYTHON DETECTION → VALIDATED FINDINGS → GEMINI EXPLANATION.
+
+Gemini must never independently decide whether a website violates privacy rules.
+
+Gemini must never invent network requests, cookies, trackers or browser events.
+
+Use server-side API calls only.
+
+Keep the API key in environment variables or a secure secret manager.
+
+If Gemini is unavailable:
+- The application must still work.
+- Deterministic explanations should be shown.
+- Do not block scan completion.
+
+---
+
+# PART 19 — TECHNICAL STACK
+
+Use the following recommended architecture.
+
+FRONTEND:
+- React.
+- TypeScript.
+- Vite.
+- Tailwind CSS or modular CSS.
+- Lucide icons.
+- Recharts where useful.
+
+BACKEND:
+- Python.
+- FastAPI.
+- Pydantic.
+
+BROWSER:
+- Playwright.
+- Chromium.
+- Isolated browser contexts.
+
+DATABASE:
+- SQLite for initial development.
+- SQLAlchemy ORM.
+- PostgreSQL-compatible schema.
+
+AI:
+- Google Gemini API.
+
+DEPLOYMENT:
+- Google Cloud Run-compatible architecture.
+
+EVIDENCE:
+- Local development storage initially.
+- Google Cloud Storage-compatible design.
+
+SECRETS:
+- Environment variables during development.
+- Google Secret Manager in production.
+
+If Google AI Studio generates a different compatible development environment, inspect the environment and adapt without compromising the core architecture.
+
+Do not pretend a frontend mockup is a functioning Playwright scanner.
+
+If browser automation cannot execute in the current hosting environment, build a clear backend integration boundary and explain how to run the Python scanning service locally.
+
+---
+
+# PART 20 — BACKEND STRUCTURE
+
+Create a clean modular architecture.
+
+Suggested structure:
+
+claritytrace/
+  frontend/
+    src/
+      components/
+      pages/
+      layouts/
+      hooks/
+      services/
+      types/
+      styles/
+      assets/
+  backend/
+    app/
+      main.py
+      config.py
+      database.py
+      models/
+      schemas/
+      api/
+      services/
+        browser_service.py
+        consent_service.py
+        network_capture.py
+        cookie_inspector.py
+        storage_inspector.py
+        tracker_classifier.py
+        detection_engine.py
+        comparison_engine.py
+        evidence_service.py
+        report_service.py
+        gemini_service.py
+      rules/
+        tracker_registry.json
+        detection_rules.py
+      tests/
+  README.md
+  .env.example
+
+Use sensible modular separation.
+
+---
+
+# PART 21 — PLAYWRIGHT BROWSER ENGINE
+
+Implement actual browser-based testing.
+
+For every scan:
+
+1. Validate the URL.
+2. Launch Chromium.
+3. Create a fresh browser context for each scenario.
+4. Register network request listeners.
+5. Capture responses and errors.
+6. Observe cookies.
+7. Capture local storage and session storage.
+8. Detect consent interfaces.
+9. Perform consent interaction where possible.
+10. Wait for a consistent observation duration.
+11. Save structured evidence.
+
+NO CONSENT:
+Open the website without interacting with its consent interface.
+
+ACCEPT ALL:
+Start with a clean context and attempt to accept all optional categories.
+
+REJECT ALL:
+Start with a clean context and attempt to reject optional categories.
+
+Consent controls vary between websites.
+
+Use configurable selectors and consent interaction strategies.
+
+Record whether the action was:
+- Successful.
+- Unsuccessful.
+- Ambiguous.
+- Not available.
+
+If the action cannot be verified, mark the scenario incomplete.
+
+Do not claim a successful rejection merely because a button was clicked.
+
+Capture:
+- Request URL.
+- Method.
+- Resource type.
+- Timestamp.
+- Response status where available.
+- Initiator where available.
+- Cookies.
+- Storage.
+- Browser errors.
+
+Use consistent observation windows.
+
+Do not bypass CAPTCHA, authentication or access restrictions.
+
+Do not overwhelm websites with requests.
+
+---
+
+# PART 22 — SECURITY REQUIREMENTS
+
+Because users can submit arbitrary URLs, implement safe scanning.
+
+Include:
+
+- SSRF protection.
+- Block localhost.
+- Block private IP ranges.
+- DNS resolution checks.
+- Redirect destination validation.
+- Scan timeouts.
+- Request limits.
+- Browser resource limits.
+- Safe temporary storage.
+- Secure API credentials.
+- Input validation.
+- Error handling.
+
+Do not allow browser automation to access internal services or cloud metadata endpoints.
+
+Never expose secret credentials to the frontend.
+
+---
+
+# PART 23 — DATABASE DESIGN
+
+Create SQLAlchemy models for:
+
+USERS:
+- id
+- name
+- email
+- password_hash
+- created_at
+
+SCANS:
+- id
+- user_id
+- target_url
+- domain
+- status
+- created_at
+- completed_at
+
+SCENARIOS:
+- id
+- scan_id
+- consent_state
+- interaction_status
+- observation_duration
+- status
+
+NETWORK_REQUESTS:
+- id
+- scenario_id
+- request_url
+- domain
+- method
+- resource_type
+- response_status
+- timestamp
+- classification
+
+COOKIES:
+- id
+- scenario_id
+- name
+- domain
+- secure
+- httponly
+- samesite
+- expiry
+
+STORAGE_ENTRIES:
+- id
+- scenario_id
+- storage_type
+- key
+- value_hash
+- observed_at
+
+FINDINGS:
+- id
+- scan_id
+- rule_id
+- title
+- severity
+- category
+- explanation
+- consent_state
+
+EVIDENCE:
+- id
+- finding_id
+- evidence_type
+- evidence_reference
+- timestamp
+- metadata
+
+BASELINES:
+- id
+- user_id
+- domain
+- scan_id
+- created_at
+
+Create appropriate relationships and indexes.
+
+---
+
+# PART 24 — API ENDPOINTS
+
+Implement actual backend endpoints.
+
+POST /api/scans
+Create a scan.
+
+GET /api/scans/{scan_id}
+Get scan metadata and status.
+
+GET /api/scans/{scan_id}/progress
+Get live progress.
+
+GET /api/scans/{scan_id}/results
+Get complete results.
+
+GET /api/scans/{scan_id}/scenarios
+Get consent-state observations.
+
+GET /api/scans/{scan_id}/requests
+Get network requests.
+
+GET /api/scans/{scan_id}/cookies
+Get cookie observations.
+
+GET /api/scans/{scan_id}/findings
+Get findings.
+
+GET /api/history
+Get scan history.
+
+POST /api/baselines
+Create a baseline.
+
+GET /api/baselines
+List baselines.
+
+POST /api/comparisons
+Compare scans.
+
+GET /api/reports/{scan_id}
+Generate report.
+
+GET /api/health
+Health check.
+
+Document the API using FastAPI OpenAPI documentation.
+
+---
+
+# PART 25 — CONTROLLED TEST ENVIRONMENT
+
+Create a small controlled website or test fixtures that simulate known browser behaviour.
+
+Implement six test cases:
+
+TEST 1:
+No optional tracking before consent.
+
+TEST 2:
+Analytics cookie created before consent.
+
+TEST 3:
+Advertising request after Reject All.
+
+TEST 4:
+Tracker appears after Accept All.
+
+TEST 5:
+A new tracker appears in a later version.
+
+TEST 6:
+Legitimate payment gateway request.
+
+Expected result:
+
+- Detect genuine test behaviour.
+- Identify consent-state differences.
+- Detect newly observed trackers.
+- Avoid automatically flagging legitimate payment infrastructure.
+- Show evidence for every finding.
+
+Clearly distinguish controlled fixtures from real public websites.
+
+These test fixtures are essential for a credible demonstration.
+
+---
+
+# PART 26 — ADVANCED PRODUCT IDEAS
+
+These features can distinguish ClarityTrace from a conventional cookie scanner.
+
+Prioritize the first four for the product roadmap.
+
+## IDEA 1: CONSENT BEHAVIOUR FINGERPRINT
+
+Summarize the observed behaviour of a website across all three consent states.
+
+## IDEA 2: PRIVACY REGRESSION TIMELINE
+
+Show how tracking behaviour changes over multiple scans.
+
+## IDEA 3: POLICY VS REALITY
+
+Compare written privacy statements with observed browser behaviour.
+
+## IDEA 4: FIX IT RECOMMENDATIONS
+
+Give developers practical investigation and remediation guidance.
+
+## IDEA 5: PRIVACY HEALTH TREND
+
+Show how a website's observed behaviour changes over time.
+
+Use evidence-backed metrics rather than an unexplained privacy score.
+
+## IDEA 6: RELEASE COMPARISON
+
+Allow developers to compare behaviour before and after a website release.
+
+## IDEA 7: DEVELOPER ALERTS
+
+Future capability to notify developers when unexpected tracking changes appear.
+
+## IDEA 8: CI/CD INTEGRATION
+
+Future capability to run privacy checks as part of deployment pipelines.
+
+Do not build all advanced features before the core scanner works.
+
+---
+
+# PART 27 — MVP IMPLEMENTATION PRIORITY
+
+Build in this order.
+
+PRIORITY 1:
+- Premium landing page.
+- URL input.
+- React application structure.
+- FastAPI backend.
+- Playwright installation.
+- One real website scan.
+
+PRIORITY 2:
+- Network request capture.
+- Cookie detection.
+- Storage capture.
+- Three consent states.
+
+PRIORITY 3:
+- Tracker classification.
+- Deterministic detection rules.
+- Evidence-backed findings.
+- Results dashboard.
+
+PRIORITY 4:
+- Consent Behaviour Fingerprint.
+- Baseline saving.
+- Regression comparison.
+
+PRIORITY 5:
+- Scan history.
+- JSON report.
+- Evidence Explorer.
+- Developer recommendations.
+
+PRIORITY 6:
+- Gemini.
+- Policy vs Reality.
+- PDF export.
+- Authentication.
+- Cloud deployment.
+
+The first successful end-to-end scan is the most important milestone.
+
+---
+
+# PART 28 — QUALITY AND PRODUCT EXPECTATIONS
+
+The final application must:
+
+- Look like a premium real startup product.
+- Have consistent design across all pages.
+- Be responsive.
+- Have working navigation.
+- Have functional buttons and forms.
+- Display proper empty states.
+- Display proper loading states.
+- Display errors clearly.
+- Connect to actual backend endpoints.
+- Display actual scan evidence.
+- Avoid fictional metrics.
+- Avoid fake scan results.
+- Avoid fabricated privacy scores.
+- Clearly identify incomplete scenarios.
+- Explain limitations.
+
+Use sample data only in explicitly labelled demo previews or controlled fixtures.
+
+Do not let decorative features take priority over technical credibility.
+
+---
+
+# PART 29 — REQUIRED BUILD PROCESS
+
+Follow this process.
+
+STEP 1:
+Understand the complete ClarityTrace product and architecture.
+
+STEP 2:
+Create the visual design system.
+
+STEP 3:
+Build the landing page.
+
+STEP 4:
+Build the authenticated application shell and navigation.
+
+STEP 5:
+Build the scan configuration experience.
+
+STEP 6:
+Create backend API integration.
+
+STEP 7:
+Implement the Playwright scanning service.
+
+STEP 8:
+Implement the three consent scenarios.
+
+STEP 9:
+Build the evidence collection and classification engine.
+
+STEP 10:
+Build the analysis dashboard.
+
+STEP 11:
+Implement baseline comparison.
+
+STEP 12:
+Test the complete user journey.
+
+Do not stop after generating a landing page or static dashboard.
+
+Create reusable components.
+
+Keep the code modular and maintainable.
+
+If you cannot complete all features in one generation, finish the working core MVP first and continue in incremental implementation stages.
+
+---
+
+# PART 30 — FINAL DELIVERABLE
+
+Deliver a complete ClarityTrace MVP with:
+
+1. Landing page.
+2. Responsive application shell.
+3. Scan configuration.
+4. Live scan progress.
+5. Playwright integration.
+6. Three consent-state scenarios.
+7. Network request capture.
+8. Cookie inspection.
+9. Storage inspection.
+10. Tracker classification.
+11. Rule-based findings.
+12. Consent Behaviour Fingerprint.
+13. Baseline comparison.
+14. Privacy Regression Timeline.
+15. Evidence Explorer.
+16. Developer recommendations.
+17. Scan history.
+18. JSON report export.
+19. Gemini integration where feasible.
+20. README and setup instructions.
+21. Environment variable template.
+22. Automated tests.
+23. Known limitations document.
+
+Provide exact commands to start the frontend and backend.
+
+Verify the application through an actual test scan wherever the environment permits.
+
+---
+
+# THE MOST IMPORTANT INSTRUCTION
+
+Build ClarityTrace as a REAL PRIVACY BEHAVIOUR TESTING PRODUCT.
+
+Not a privacy-policy summarizer.
+
+Not a chatbot.
+
+Not a generic analytics dashboard.
+
+Not a fictional compliance checker.
+
+Its value must come from:
+
+REAL BROWSER OBSERVATIONS.
+
+CONTROLLED CONSENT TESTING.
+
+TRANSPARENT DETECTION RULES.
+
+REPRODUCIBLE EVIDENCE.
+
+BASELINE REGRESSION COMPARISON.
+
+CLEAR DEVELOPER RECOMMENDATIONS.
+
+The core product experience should be:
+
+ENTER WEBSITE → RUN BROWSER TESTS → OBSERVE CONSENT STATES → DETECT TRACKING → COMPARE BEHAVIOUR → VIEW EVIDENCE → FIX ISSUES.
+
+Build the smallest genuinely working version first.
+
+Make it beautiful, but make it real.
+
+This is ClarityTrace by Team NextGen.

@@ -1,0 +1,36 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: claritytrace
+spec:
+  template:
+    metadata:
+      annotations:
+        autoscaling.knative.dev/minScale: "0"
+        autoscaling.knative.dev/maxScale: "5"
+    spec:
+      containerConcurrency: 10
+      timeoutSeconds: 300
+      containers:
+        - image: gcr.io/PROJECT_ID/claritytrace:latest
+          ports:
+            - containerPort: 3000
+          resources:
+            limits:
+              cpu: "2"
+              memory: "2Gi"
+          env:
+            - name: NODE_ENV
+              value: "production"
+            - name: SCAN_TIMEOUT_MS
+              value: "60000"
+            - name: GEMINI_API_KEY
+              valueFrom:
+                secretKeyRef:
+                  name: claritytrace-gemini-key
+                  key: latest
+            - name: JWT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: claritytrace-jwt-secret
+                  key: latest

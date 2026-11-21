@@ -1,0 +1,6 @@
+{
+  "name": "ClarityTrace",
+  "description": "AI-assisted website privacy monitoring, consent-state verification, and regression testing platform.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
